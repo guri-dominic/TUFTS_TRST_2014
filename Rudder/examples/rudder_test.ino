@@ -2,11 +2,13 @@
 #include "Servo.h"
 #include "Rudder.h"
 
+const int rudderServoPin = 9;
+
 Rudder R;
 
 void setup() {
 	Serial.begin(9600);
-	R.Init(9);
+	R.Init(rudderServoPin);
 }
 
 void loop() {
