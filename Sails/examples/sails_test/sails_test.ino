@@ -2,22 +2,23 @@
 #include "Servo.h"
 #include "Sails.h"
 
-const int sailServoPin = 9;
+const int sailServoPin = 5;
 
 Sails  S;
 
 
-void setup() {
+void setup() 
+{
 	Serial.begin(9600);
 	S.Init(sailServoPin);
+	S.position(SERVO_FULL_TRIM);
+	delay(500);
 }
 
-void loop() {
-S.position(SAILS_MAX);
-delay(1000);
-S.position(SAILS_MIN);
-delay(500);
-
-Serial.println(S.readPosition());
+void loop() 
+{
+	delay(5000);
+	S.position(SERVO_FULL_PULL_IN);
+	Serial.println(S.readPosition());
 }
 

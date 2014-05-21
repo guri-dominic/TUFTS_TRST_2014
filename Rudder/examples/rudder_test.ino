@@ -2,7 +2,7 @@
 #include "Servo.h"
 #include "Rudder.h"
 
-const int rudderServoPin = 9;
+const int rudderServoPin = 5;
 
 Rudder R;
 
@@ -11,13 +11,15 @@ void setup() {
 	R.Init(rudderServoPin);
 }
 
-void loop() {
-R.position(20);
-delay(500);
-R.position(-20);
-delay(500);
+void loop() 
+{
+	R.position(-45);
+	// R.center();
+	// delay(2000);
+	// R.position(20);
+	// delay(500);
 
-Serial.println(R.readPosition());
+	Serial.println(R.readPosition());
 }
 
 

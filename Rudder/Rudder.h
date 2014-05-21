@@ -6,7 +6,11 @@
 */
 #ifndef Rudder_H
 #define Rudder_H
-#define RUDDER_MAX 35
+
+#define RUDDER_MAX 45
+#define CENTER 90
+#define MS_CENTER 1500
+#define MS_RUDDER_MAX 1025
 
 
 class Rudder 
@@ -14,7 +18,8 @@ class Rudder
 public:
 	Rudder();
 	void Init(int rudderArduinoPin);
-	boolean position(int pos);
+	void position(int pos);
+	void center();
 	int readPosition();
 private:
 	int currentPosition;
